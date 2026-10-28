@@ -20,14 +20,6 @@ function getHumanChoice() {
     return userInput.toLocaleLowerCase();
 }
 
-// call funtion
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
-
-// print result
-console.log("humanChoice:", humanSelection);
-console.log("computerChoice:", computerSelection);
-
 // Game Round
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === computerChoice) {
@@ -46,11 +38,20 @@ function playRound(humanChoice, computerChoice) {
         }
 }
 
-    playRound(humanSelection, computerSelection);
-        alert("humanScore:" + humanScore);
-        alert("computerScore:" + computerScore);
-
 function playGame() {
-    
+    for (let i = 0; i < 5; i++) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
 
+    playRound(humanSelection, computerSelection);
+    }
+
+    if (humanScore > computerScore) {
+        alert("you win");
+    } else if (computerScore > humanScore) {
+        alert("better luck next time");
+    } else {
+        alert("It's a tie")
+    }
 }
+    playGame();
