@@ -7,13 +7,63 @@
 * {
 outline: 2px solid blue;}
 
+body {
+  background-image: url(images/table.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
+
 .container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
 
+/* Scoreboard and Round Result Styles */
+#scoreboard p {
+  font-family: 'Georgia', serif;
+  font-size: 28px; 
+  font-weight: bold; 
+  color: white; 
+  text-align: center; 
+  text-shadow: 2px 2px 4px black;
+}
+
+
 .title {
   font-family: 'Cinzel', serif;
+  font-size: 55px;
+  font-weight: 90px;
+  color: white;
+  text-shadow: 
+    -1px -1px 0 black,  
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black,
+     0px -1px 0 black,
+     0px  1px 0 black,
+    -1px  0px 0 black,
+     1px  0px 0 black;
+}
+#human-score, #computer-score {
+  font-size: 40px;
+}
+
+#round-result {
   font-size: 45px;
+  text-align: center;
+  font-family: cinzel, serif;
+  color: white;
+  text-shadow: 
+     -1px -1px 0 black,  
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black,
+     0px -1px 0 black,
+     0px  1px 0 black,
+    -1px  0px 0 black,
+     1px  0px 0 black;
 }
