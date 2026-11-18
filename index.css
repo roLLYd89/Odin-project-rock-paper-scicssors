@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* {
+outline: 2px solid blue;}
+
+
 body {
   background-image: url(images/table.webp);
   background-size: cover;
@@ -74,5 +78,5 @@ body {
 }
 
 .card-artwork img {
-  width: 60%;
+  width: 60%
 }
