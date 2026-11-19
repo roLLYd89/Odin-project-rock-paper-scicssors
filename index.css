@@ -111,8 +111,15 @@ body {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   body {
-    /* Fixes background zoom/scroll bug on mobile browsers */
     background-attachment: scroll;
+  }
+
+  #scoreboard p {
+    font-size: 13px;
+  }
+
+  #human-score, #computer-score {
+    font-size: 18px;
   }
 
   .card-container {
@@ -121,7 +128,6 @@ body {
   }
 
   .card-artwork img {
-    /* Fits 3 cards side-by-side cleanly on phone screens */
     max-width: 105px;
   }
 
