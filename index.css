@@ -59,7 +59,7 @@ body {
   font-family: cinzel, serif;
   color: white;
   text-shadow: 
-     -1px -1px 0 black,  
+    -1px -1px 0 black,  
      1px -1px 0 black,
     -1px  1px 0 black,
      1px  1px 0 black,
@@ -77,6 +77,14 @@ body {
   margin-top: 20px;
 }
 
+.card, .card-artwork img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .card-artwork img {
-  width: 60%
+  width: 300px;
+
 }
