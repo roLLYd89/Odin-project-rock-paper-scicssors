@@ -51,12 +51,8 @@ function playRound(humanChoice, computerChoice) {
         if (humanScore === 5) {
             gameOver = true;
             winnerDiv.textContent = "Congratulations! You won the game!";
-            resetBtn.style.display
-        } else if (computerScore === 5) {
-            gameOver = true;
-            winnerDiv.textContent = "Computer won the game! Better luck next time!";
             resetBtn.style.display = "inline-block";
-        } else if(computerScore === 5) {
+        } else if (computerScore === 5) {
             gameOver = true;
             winnerDiv.textContent = "Computer won the game! Better luck next time!";
             resetBtn.style.display = "inline-block";
