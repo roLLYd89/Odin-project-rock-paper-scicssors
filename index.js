@@ -3,12 +3,12 @@ let computerScore = 0;
 let gameOver = false;
 
 // DOM Selector
-const cards = document.querySelectorAll(`.card`);
-const humanScoreSpan = document.querySelector(`#human-score`);
-const computerScoreSpan = document.querySelector(`#computer-score`);
-const roundResultDiv = document.querySelector(`#round-result`);
-const winnerDiv = document.querySelector(`#winner-announcement`);
-const resetBtn = document.querySelector(`#reset-btn`);
+const cards = document.querySelectorAll('.card');
+const humanScoreSpan = document.querySelector('#human-score');
+const computerScoreSpan = document.querySelector('#computer-score');
+const roundResultDiv = document.querySelector('#round-result');
+const winnerDiv = document.querySelector('#winner-announcement');
+const resetBtn = document.querySelector('#reset-btn');
 
 //computer choice function
 function getComputerChoice() {
@@ -44,12 +44,14 @@ function playRound(humanChoice, computerChoice) {
     computerScoreSpan.textContent = computerScore;
 
     checkWinner();
+}
 
     // Update the score display
     function checkWinner() {
         if (humanScore === 5) {
             gameOver = true;
             winnerDiv.textContent = "Congratulations! You won the game!";
+            resetBtn.style.display
         } else if (computerScore === 5) {
             gameOver = true;
             winnerDiv.textContent = "Computer won the game! Better luck next time!";
@@ -62,21 +64,21 @@ function playRound(humanChoice, computerChoice) {
     }
     //Event Listener for 3 cards
     cards.forEach(card => {
-        card.addEvenListener(`click`, () => {
-            const humanSelection = card.CDATA_SECTION_NODE.choice;
+        card.addEventListener('click', () => {
+            const humanSelection = card.dataset.choice;
             const computerSelection = getComputerChoice();
             playRound(humanSelection, computerSelection);
         })
     })
 
     //reset button
-    resetBtn.addEventListener(`click`, () => {
+    resetBtn.addEventListener('click', () => {
         humanScore = 0;
         computerScore = 0;
         gameOver = false;
         humanScoreSpan.textContent = 0;
         computerScoreSpan.textContent = 0;
-        roundResultDiv.textContent = "Select yourr Card!";
+        roundResultDiv.textContent = "Select your Card!";
         winnerDiv.textContent = "";
         resetBtn.style.display = "none";
     });
