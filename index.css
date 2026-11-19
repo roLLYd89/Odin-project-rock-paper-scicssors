@@ -10,31 +10,33 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-
+  min-height: 100vh;
+  padding: 15px;
 }
 
 .container {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  text-align: center;
 }
 
 /* Scoreboard and Round Result Styles */
 #scoreboard p {
   font-family: 'Georgia', serif;
-  font-size: 28px; 
-  font-weight: bold; 
-  color: white; 
-  text-align: center; 
+  font-size: clamp(18px, 3vw, 28px);
+  font-weight: bold;
+  color: white;
+  text-align: center;
   text-shadow: 2px 2px 4px black;
 }
 
-
 .title {
   font-family: 'Cinzel', serif;
-  font-size: 55px;
-  font-weight: 90px;
+  font-size: clamp(28px, 6vw, 55px);
+  font-weight: 900;
   color: white;
+  text-align: center;
   text-shadow: 
     -1px -1px 0 black,  
      1px -1px 0 black,
@@ -45,15 +47,18 @@ body {
     -1px  0px 0 black,
      1px  0px 0 black;
 }
+
 #human-score, #computer-score {
-  font-size: 40px;
+  font-size: clamp(26px, 4.5vw, 40px);
 }
 
 #round-result {
-  font-size: 45px;
+  font-size: clamp(22px, 4.5vw, 45px);
   text-align: center;
-  font-family: cinzel, serif;
+  font-family: 'Cinzel', serif;
   color: white;
+  margin-top: 15px;
+  padding: 0 10px;
   text-shadow: 
     -1px -1px 0 black,  
      1px -1px 0 black,
@@ -69,8 +74,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 40px;
-  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 25px;
 }
 
 .card, .card-artwork img {
@@ -81,13 +87,16 @@ body {
 }
 
 .card-artwork img {
-  width: 300px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 }
 
-<!-- UI Design addons
+/* UI Design addons */
 .card {
   cursor: pointer;
-  transition: transform 0.15 ease, box-shadow 0.2 ease;
+  border-radius: 12px;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
 }
 
 .card:hover {
@@ -96,5 +105,28 @@ body {
 }
 
 .card:active {
-  transform: scale(0.99);
+  transform: scale(0.96);
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    /* Fixes background zoom/scroll bug on mobile browsers */
+    background-attachment: scroll;
+  }
+
+  .card-container {
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .card-artwork img {
+    /* Fits 3 cards side-by-side cleanly on phone screens */
+    max-width: 105px;
+  }
+
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
 }
