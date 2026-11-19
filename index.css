@@ -82,5 +82,19 @@ body {
 
 .card-artwork img {
   width: 300px;
+}
 
+<!-- UI Design addons
+.card {
+  cursor: pointer;
+  transition: transform 0.15 ease, box-shadow 0.2 ease;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(255, 215, 0, 0.35);
+}
+
+.card:active {
+  transform: scale(0.95);
 }
