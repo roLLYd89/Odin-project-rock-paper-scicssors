@@ -70,4 +70,13 @@ function playRound(humanChoice, computerChoice) {
     })
 
     //reset button
-    
+    resetBtn.addEventListener(`click`, () => {
+        humanScore = 0;
+        computerScore = 0;
+        gameOver = false;
+        humanScoreSpan.textContent = 0;
+        computerScoreSpan.textContent = 0;
+        roundResultDiv.textContent = "Select yourr Card!";
+        winnerDiv.textContent = "";
+        resetBtn.style.display = "none";
+    });
